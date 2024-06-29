@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home</title>
+</head>
+<body>
+  <h1>Brewery Search</h1>
+  <form action="/search" method="get">
+    <input type="text" name="by_city" placeholder="City">
+    <input type="text" name="by_name" placeholder="Name">
+    <input type="text" name="by_type" placeholder="Type">
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+    <% breweries.forEach(brewery => { %>
+      <li>
+        <a href="/brewery/<%= brewery.id %>">
+          <%= brewery.name %> - <%= brewery.city %>, <%= brewery.state %>
+        </a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
